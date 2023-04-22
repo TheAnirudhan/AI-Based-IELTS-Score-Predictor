@@ -1,0 +1,219 @@
+body {
+    background-image: url(../static/wp3284832.gif);
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+  }
+  
+  .abc {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+  }
+  
+  #Initial {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #Evaluate {
+    margin: 0 auto;
+  }
+  
+  #button_id {
+    border: none;
+  }
+  
+  /* CSS for the IELTS Scoring System */
+  
+  /* CSS for the "sudo" class */
+  .sudo {
+    margin-top: 50px;
+    text-align: center;
+    border-radius: 10px;
+    width: 200px;
+    height: 100px;
+    border: 2px solid plum;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .sudo:hover {
+    background-color: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    transform: translateY(-5px);
+  }
+  
+  /* CSS for the "Writing" button */
+  #Writing.sudo:hover, #Speaking.sudo:hover , #Evaluate.sudo:hover{
+    transform: translateY(-5px);
+  }
+  
+  /* CSS for the "Speaking" button */
+  #Speaking.sudo {
+    margin-top: 50px;
+    text-align: center;
+    border-radius: 10px;
+    width: 200px;
+    height: 100px;
+    border: 2px solid plum;
+    transition: all 0.3s ease-in-out;
+  }
+
+  #Evaluate.sudo{
+    margin-top: 50px;
+    text-align: center;
+    border-radius: 10px;
+    width: 200px;
+    height: 100px;
+    border: 2px solid plum;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  #button_id h1 {
+    margin-top: 20%;
+    padding: 0;
+    font-size: xx-large;
+    
+  }
+  
+  #aboutielts {
+    font-size: 1.1rem;
+    text-align: justify;
+    color: white;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+
+  #question_box {
+    border: 2px solid transparent;
+    position: relative;
+    animation: lightning 2s ease-in-out infinite;
+    height: 150px;
+    width: 1300px;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    text-align : left;
+    color: white;
+    overflow: auto;
+    word-break: break-all;
+  }
+  
+
+  #answer_box {
+    border: 2px solid transparent;
+    position: relative;
+    animation: lightning 2s ease-in-out infinite;
+    height: 400px;
+    width: 1300px;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    text-align: left;
+    color: white;
+  }
+  
+  #question_box:hover {
+    border: 3px solid #00ffff;
+  }
+  
+  @keyframes lightning {
+    0% {
+      border-color: #ffffff;
+    }
+    20% {
+      border-color: #c4eaea;
+    }
+    25% {
+      border-color: #a6eeee;
+    }
+    35% {
+      border-color: #8ae7e7;
+    }
+    40% {
+      border-color: #4fabab;
+    }
+    50% {
+      border-color: #359696;
+    }
+    55% {
+      border-color: #0b8686;
+    }
+    65% {
+      border-color: #359696;
+    }
+    70% {
+      border-color: #4fabab;
+    }
+    80% {
+      border-color: #8ae7e7;
+    }
+    85% {
+      border-color: #a6eeee;
+    }
+    95% {
+      border-color: #c4eaea;
+    }
+    100% {
+      border-color: #ffffff;
+    }
+  }
+  
+  
+  #question_prompt{
+    font-size: 1.1rem;
+    text-align: justify;
+    color:#9dc8f4;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  #listing {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  #intro {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 3rem;
+  }
+
+  #wordCount {
+    margin-top: 0px;
+    color: aliceblue;
+    font-size: 1m;
+    text-align: center;
+    background-color: transparent;
+
+} 
+
+
+
+#email_box {
+  border: 2px solid transparent;
+  position: relative;
+  animation: lightning 2s ease-in-out infinite;
+  height: 60px;
+  width: 400px;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  text-align : left;
+  color: white;
+  overflow: auto;
+  word-break: break-all;
+}
+
+#email_box:hover {
+  border: 3px solid #00ffff;
+}

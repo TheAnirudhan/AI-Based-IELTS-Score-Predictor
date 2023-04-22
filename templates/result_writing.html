@@ -1,0 +1,184 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../static/writing.css">
+        <link rel="stylesheet" href="../static/my_css.css">
+        <title style="color: antiquewhite; border: 20px solid transparent; background-color: rgba(90,69,109,0.5); text-align: center; font-size: 1.5em;margin-top: 0%;">WRITING RESULTS</title>
+        <style>
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                margin: 0 auto;
+                max-width: 600px;
+            }
+    
+            .item {
+                flex: 1 1 30%;
+                margin: 10px;
+            }
+    
+            .item img {
+                display: block;
+                max-width: 100%;
+                height: auto;
+            }
+        </style>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+            </script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    </head>
+    <body>
+        <p id="aboutielts" style="color: antiquewhite; border: 20px solid transparent; background-color: rgba(90,69,109,0.5); text-align: center; font-size: 1.5em;margin-top: 0%;">RESULT</p>
+        <div class="container">
+            <div class="item">
+                <h1 id="aboutielts">Overall Score</h1>
+                <a href="#" id="overall_score">
+                    <img src="../static/overall.png" width = "212" height="159">
+                </a>
+            </div>
+            <div class="item">
+                <h1 id="aboutielts">Task Achievement</h1>
+                <a href="#" id="task_achievement">
+                    <img src="..\static\task_achievement.png" width = "212" height="159">
+                </a>
+            </div>
+            <div class="item">
+                <h1 id="aboutielts">Coherence and Cohesion</h1>
+                <a href="#" id="coherence_cohesion">
+                    <img src="..\static/coherence_cohesion.png" width = "212" height="159">
+                </a>
+            </div>
+            <div class="item">
+                <h1 id="aboutielts">Grammatical Accuracy</h1>
+                <a href="#" id="grammatical">
+                    <img src="..\static/grammatical.png" width = "212" height="159">
+                </a>
+            </div>
+            <div class="item">
+                <h1 id="aboutielts">Lexical Resources</h1>
+                <a href="#" id="lexical">
+                    <img src="../static/lexical resources.png" width = "212" height="159">
+                </a>
+            </div>
+            
+            
+        </div>
+        <div id="Evaluate" class="sudo">
+            <button type="submit" onclick="goBack()" id="button_id" style="background-color: transparent; color: plum;">
+                <h1>Go Back</h1>
+            </button>
+        </div>
+
+
+        <div id="Evaluate" class="sudo">
+            <form action="/result" method="post">
+                <button type="submit" id="button_id" style="background-color: transparent; color: plum;">
+                    <h1>Mail</h1>
+                </button>
+            </form>
+        </div>
+
+        <script>
+            const ov = document.getElementById("overall_score")
+            const ta = document.getElementById("task_achievement")
+            const co = document.getElementById("coherence_cohesion")
+            const gr = document.getElementById("grammatical")
+            const le = document.getElementById("lexical")
+            
+            var ovr = '{{ovr}}';
+            var tar = '{{tar}}';
+            var ccr = '{{ccr}}';
+            var ler = '{{ler}}';
+            var grr = '{{grr}}';
+
+            ov.addEventListener('click',function(event){
+                event.preventDefault()
+                toggleVisibilityOn(gr)
+                toggleVisibilityOn(le)
+                showFlashcard('Overall Score',ovr)
+            })
+
+            ta.addEventListener('click',function(event){
+                event.preventDefault()
+                toggleVisibilityOn(gr)
+                toggleVisibilityOn(le)
+                showFlashcard('Task Achievement',tar)
+            })
+
+            co.addEventListener('click',function(event){
+                event.preventDefault()
+                toggleVisibilityOn(gr)
+                toggleVisibilityOn(le)
+                showFlashcard('Coherence and Cohesion',ccr)
+            })
+
+            gr.addEventListener('click',function(event){
+                event.preventDefault()
+                // toggleVisibilityOn(gr)
+                // toggleVisibilityOn(le)
+                showFlashcard('Grammatical Accuracy',grr)
+            })
+
+            le.addEventListener('click',function(event){
+                event.preventDefault()
+                // toggleVisibility(gr)
+                // toggleVisibility(le)
+                showFlashcard('Lexical Resources',ler)
+            })
+
+            function toggleVisibilityOn(element) {
+                element.style.transform="translateY(0%)";
+            }
+            
+            function toggleVisibility(element){
+                element.style.transform="transform(-1000%)";
+            }
+
+            function showFlashcard(header, content) {
+                const card = document.createElement("div");
+                card.classList.add("flashcard");
+                card.style.color = "aliceblue";
+                card.style.margin = "10px";
+
+                const cardHeader = document.createElement("h2");
+                cardHeader.innerText = header;
+                cardHeader.style.color="#d3b8ff";
+                card.appendChild(cardHeader);
+
+                const cardContent = document.createElement("div");
+                cardContent.classList.add("flashcard-content");
+                cardContent.innerHTML = content;
+                card.appendChild(cardContent);
+
+                document.body.appendChild(card);
+
+                setTimeout(function() {
+                    card.style.transition = "transform 0.3s ease-out";
+                    card.style.transform = "translateY(0%)"; // slide up to the center of the screen
+                }, 50);
+
+                const closeBtn = document.createElement("button");
+                closeBtn.innerText = "Hide";
+                closeBtn.addEventListener("click", function () {
+                    card.style.transform = "translateY(100%)"; // slide the card back down
+                    setTimeout(function() {
+                    document.body.removeChild(card);
+                    toggleVisibility(gr);
+                    toggleVisibility(le);
+                    }, 300); // wait for the animation to finish before removing the card
+                });
+                card.appendChild(closeBtn);
+                }
+
+
+
+
+        </script>
+
+
+    </body>
+</html>
