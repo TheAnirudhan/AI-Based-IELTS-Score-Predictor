@@ -20,3 +20,8 @@ Here the results are displayed to showcase your level in the following scoring c
 ![Speaking results](https://user-images.githubusercontent.com/68364372/235333710-00108e63-58c0-42e9-bf86-e1c50bd08ad7.png)
 ### Pronunciation input page
 Here you will be asked to read a small paragraph and save a .wav recorded file and upload it, based on the phonemes of your speech signal and the phonemes for the text, Levenstein distance is calculated to find your level of pronunciation out of 100.
+### Pronunciation output page
+![Pronunciation output](https://user-images.githubusercontent.com/68364372/235334193-0377dd33-709b-476f-b5be-f76515b88ecd.png)
+### E-mail forwarding page
+E-mail of the result could be sent to a mail-id of your interest.
+![mail forwarding](https://user-images.githubusercontent.com/68364372/235334209-efa54fdf-9250-4da5-abd8-d43d415b4e04.png)
